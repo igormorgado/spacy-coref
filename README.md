@@ -50,8 +50,7 @@ in the project directory.
 
 | File | Source | Description |
 | --- | --- | --- |
-| `assets/` | Git | CoNLL-2012 scripts and dehydrated data, used for preprocessing OntoNotes. |
-| `assets/litbank` | Git | LitBank dataset. Only used for building data for quick unit tests. |
+| `assets/` | Git | Dataset for training, generated from ontonotes 5 |
 
 <!-- WEASEL: AUTO-GENERATED DOCS END (do not remove) -->
 
@@ -71,19 +70,6 @@ sequence length is longer than ...`. This is a rare condition that
 happens occasionally. For more details see [this
 thread](https://github.com/explosion/spaCy/discussions/9277#discussioncomment-1374226).
 
-## Data Preparation
-
-To use this project you need a copy of [OntoNotes](https://catalog.ldc.upenn.edu/LDC2013T19).
-
-If you have OntoNotes and have not worked with the CoNLL 2012 coreference annotations before, set `vars.ontonotes` in `project.yml` to the local path to OntoNotes. The top level directory should contain directories named `arabic`, `chinese`, `english`, and `ontology`. Then run the following command to prepare the coreference data:
-
-```
-spacy project run prep-conll-data
-```
-
-After that you can execute `spacy project run all`.
-
-If you already have CoNLL 2012 data prepared and concatenated into one file per split, you can specify the paths to the training, dev, and test files directly in `project.yml`, see the `vars` section. After doing so you can run `spacy project run all`.
 
 ## Using the Trained Pipeline
 
