@@ -1,0 +1,22 @@
+preprocess:
+  cmd: python -m weasel run preprocess
+  script:
+    - python scripts/preprocess.py assets/train.gold.conll corpus/train.spacy
+    - python scripts/preprocess.py assets/dev.gold.conll corpus/dev.spacy
+    - python scripts/preprocess.py assets/test.gold.conll corpus/test.spacy
+  deps:
+    - path: assets/train.gold.conll
+      md5: 9f92a664298dc78600fd50813246aa77
+    - path: assets/dev.gold.conll
+      md5: bde418ea4bbec119b3a43b43933ec2ae
+    - path: assets/test.gold.conll
+      md5: 6e64b649a039b4320ad32780db3abfa1
+    - path: scripts/preprocess.py
+      md5: 3796213009487005e8e5ff2b56305286
+  outs:
+    - path: corpus/train.spacy
+      md5: 1cb8a655abda000e4fa12b5ae959366b
+    - path: corpus/dev.spacy
+      md5: d93f389f98735f8471a9c22bc45bb3af
+    - path: corpus/test.spacy
+      md5: f8d128e54fe47b4199057f8984854053

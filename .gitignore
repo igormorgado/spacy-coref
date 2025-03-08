@@ -1,0 +1,5 @@
+error.log
+assets/*.gold.conll
+corpus/
+training/
+wandb/
