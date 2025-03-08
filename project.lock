@@ -20,3 +20,21 @@ preprocess:
       md5: d93f389f98735f8471a9c22bc45bb3af
     - path: corpus/test.spacy
       md5: f8d128e54fe47b4199057f8984854053
+uncompress:
+  cmd: python -m weasel run uncompress
+  script:
+    - bash -c "xz -k -d assets/*xz"
+  deps:
+    - path: assets/dev.gold.conll.xz
+      md5: d19128992d90152543c4103349292ff9
+    - path: assets/test.gold.conll.xz
+      md5: 463ec80eca466b03e81a5744d77a0389
+    - path: assets/train.gold.conll.xz
+      md5: c7d226469325bb62727dba50d652a45b
+  outs:
+    - path: assets/train.gold.conll
+      md5: 9f92a664298dc78600fd50813246aa77
+    - path: assets/dev.gold.conll
+      md5: bde418ea4bbec119b3a43b43933ec2ae
+    - path: assets/test.gold.conll
+      md5: 6e64b649a039b4320ad32780db3abfa1

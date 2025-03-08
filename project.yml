@@ -64,12 +64,11 @@ commands:
   - name: "uncompress"
     help: "Uncompress the dataset"
     script: 
-      - bash -c "xz -k -d assets/*xz"
+      - bash -c "xz -v -k -d assets/*xz"
     deps:
       - assets/dev.gold.conll.xz
       - assets/test.gold.conll.xz
       - assets/train.gold.conll.xz
-      - ${vars.ontonotes}
     outputs: 
       - assets/train.gold.conll
       - assets/dev.gold.conll
